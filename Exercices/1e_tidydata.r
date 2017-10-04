@@ -35,7 +35,7 @@ regeneration = read_csv("regeneration.csv")
 # Exercice 3
 # **********
 
-# On a, pour 9 personnes, le poids, age, taille, sexe ainsi que le groupe sanguin
+# On a, pour 7 personnes, le poids, age, taille, sexe ainsi que le groupe sanguin
 # - Les données sont-elles correctement représentées
 # - Si oui faites un modèle lineraire poids vs taille + groupe sanguin
 # - Si non faites quand même un modèle lineraire poids vs taille + groupe sanguin
