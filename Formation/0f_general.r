@@ -18,7 +18,7 @@ library(microbenchmark)
 #   - language haut/bas niveau
 #   - notion de typage
 #   - allocation dynamique de mémoire
-#	- transtypage dynamique inféré
+#	  - transtypage dynamique inféré
 # 	- recyclage de ménoire 
 #   - recyclage automatique de mémoire (garbage collection)
 #   - fuite de mémoire
@@ -42,9 +42,7 @@ tab[9]
 # Analyse de la fonction diff
 #   - la pire façon de faire
 #   - la bonne méthode de base
-#   - la bonne méthode en R : la famille apply
 #   - la super bonne méthode en R : la vectorisation
-#   - la méthode alternative : la précompilation
 #   - la méthode ultime en C++ compilé
 # ======================================
 

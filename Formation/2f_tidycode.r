@@ -63,3 +63,47 @@ plot(data$Hauteur, data$Diametre, col = data$Parcelle, cex = data$Qualite)
 data$Parcelle %<>% as.factor
 
 data %$% plot(Hauteur, Diametre, col = Parcelle, cex = Qualite)
+
+
+# ==================================
+# =      Ecrivez des fonctions     =
+# ==================================
+
+# Ecrivez votre code comme si il devait être lu comme du francais (de l'anglais plutôt).
+# Ecrivez votre code comme pour être lu par un autre que vous
+# Et oui, un bon code peut être lu (presque) comme un livre.
+
+# Comparez ce code 
+
+for(i in unique(test4$num_UC))
+{ 
+  for (j in 1:max(test4[test4$num_UC==i,]$num_branch_azi,na.rm=T))
+  {
+    ifelse(j != max(test4[test4$num_UC==i,]$num_branch_azi,na.rm=T),
+    {
+      test4[test4$num_UC==i & test4$num_branch_azi==j,]$angle <-test4[test4$num_UC==i & test4$num_branch_azi==j+1,]$Azimut - test4[test4$num_UC==i & test4$num_branch_azi==j,]$Azimut
+    },{
+      test4[test4$num_UC==i & test4$num_branch_azi==j,]$angle <-360 - test4[test4$num_UC==i & test4$num_branch_azi==j,]$Azimut + test4[test4$num_UC==i & test4$num_branch_azi==1,]$Azimut
+    })
+  }
+}
+
+# Et ce code 
+
+calcul_angles = function(azimuts)
+{
+  n = length(azimuts)
+  angles = lead(azimuts) - azimuts
+  angles[n] = 360 - azimuts[n] + azimuts[1]
+  return(angles)
+}
+
+test4 %>% group_by(num_UC) %>% mutate(angles = calcul_angles(Azimut))
+
+# Quelle difference principale ? (Hormis l'utilisation de dplyr que nous verrons tantôt)
+
+
+# Créez des fonctions pour:
+# - ne pas se répéter
+# - simplifier la lecture du code
+# - debugger plus facilement
