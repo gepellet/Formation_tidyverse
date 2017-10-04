@@ -1,0 +1,9 @@
+Essence,classe.hauteur,1,2,3,4,5,6,7,8,9,10,Especes.competitrices,Pourcentage
+ERS,moins de 30,1,1,30,1,1,15,1,1,31,1,Carex,10
+ERS,plus de 30,0,0,2,0,0,0,0,0,0,0,Dryopteride Spiruleuse,25
+HEG,moins de 30,1,1,30,1,1,15,1,1,31,1,Carex,10
+HEG,plus de 30,0,0,2,0,0,0,0,0,0,0,Dryopteride Spiruleuse,25
+BOJ,moins de 30,1,1,30,1,1,15,1,1,31,1,Carex,10
+BOJ,plus de 30,0,0,2,0,0,0,0,0,0,0,Dryopteride Spiruleuse,25
+ERO,moins de 30,1,1,30,1,1,15,1,1,31,1,Carex,10
+ERO,plus de 30,0,0,2,0,0,0,0,0,0,0,Dryopteride Spiruleuse,25

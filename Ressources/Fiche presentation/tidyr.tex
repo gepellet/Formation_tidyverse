@@ -1,0 +1,98 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{xspace}
+\usepackage[none]{hyphenat}
+\usepackage[top=2cm, bottom=2cm, left=8cm, right=2cm]{geometry}
+\usepackage[pages=some,scale=1,angle=0,opacity=1]{background}
+\usepackage[hyperindex=true,%
+		    linkcolor=hyperref,%
+		    urlcolor=hyperref,%
+		    filecolor=hyperref,%
+		    citecolor=hyperref,%
+		    colorlinks=true]{hyperref}
+		    
+
+\definecolor{hyperref}{rgb}{0.4,0,0}
+
+\newcommand\BackImage[2][scale=1]{%
+\BgThispage
+\backgroundsetup{
+  contents={\includegraphics[#1]{#2}}
+  }
+}
+
+\title{\vspace{-2.5cm} Formation R -- Bonne pratiques de programmation et tidyverse (readr, dplyr, tidyr, \ldots) \vspace{-1cm}}
+\date{}
+
+\begin{document}
+\BackImage[width=1\paperwidth]{bkg}
+\sloppy	
+
+\maketitle
+  
+\section*{Présentation générale}
+  
+R est un langage d'analyse de données très puissant mais qui peut devenir excessivement lent et illisible lorsqu'il est mal utilisé. Malheureusement, beaucoup d'utilisateurs de R n'ont pas de formation réelle en programmation ou même avec R. Ainsi, souvent, un script R peut mettre des heures à s’exécuter alors que votre laptop est capable de calculer n'importe lequel de vos codes en quelques secondes s'il était codé autrement.\\
+
+Nous verrons pourquoi ces scripts sont lents et surtout comment bien programmer en R pour, d'une part rendre le code beaucoup plus rapide, mais aussi beaucoup plus \textbf{lisible}. La lisibilité du code, trop souvent délaissée, est primordiale pour vous et vos collaborateurs. En R, il arrive souvent qu'après quelques mois on ne soit plus capable de comprendre ses propres codes!\\
+
+Les nouveaux package du tidyverse, de par leur très grande qualité et efficacité, sont devenus des outils de référence dans R pour manipuler des données simplement et efficacement. Nous étudierons dans cette formation pourquoi et comment les utiliser.\\
+
+Cette formation ne requiert aucun prérequis particulier si ce n'est de déjà utiliser R, même à un niveau de base. Cependant, il ne s'agit ni d'une initiation à R ni d'une formation aux statistiques.
+
+\section*{Informations complémentaires}
+
+
+\begin{description}
+\item[Tarifs :] la formation est \textbf{\bsc{gratuite}} dans l'esprit de l'entraide, du partage libre des connaissances et du logiciel libre.
+\item[Dates :] la formation aura lieu \textbf{24 octobre de 9h à 16h}.
+\item[Contact :] \href{mailto:Eric.Normandeau@bio.ulaval.ca}{<Eric.Normandeau@bio.ulaval.ca>}
+\item[Inscription :] \href{https://goo.gl/forms/lSbyBM5SpiT1PKU63}{cliquez ici}
+\end{description}
+
+%\newpage
+%
+%\BgThispage
+%
+%\section*{Description détaillée}
+%
+%Nous verrons certains concepts qui sont \textbf{fondamentaux} et à la  base de R mais qui ne sont que rarement maîtrisés faute de formation, comme les notions de \textbf{programmation vectorielle} ou d'\textbf{agrégation de données}. Nous verrons les bonnes pratiques et les bons packages pour écrire du code propre et toujours lisible même 6 mois plus tard. Nous verrons l'importance de la \textbf{factorisation du code} et l'élégance des \textbf{opérateurs de \textit{piping}}. Nous comment remplacer les fonctions lentes et lourdes de R base par des fonction simple et efficaces de \texttt{dplyr}.\\
+%
+%\subsection*{Éléments que nous étudierons}
+%
+%\begin{itemize}
+%\item Pourquoi R est lent ? Théorie informatique et compréhension d'un ordinateur.
+%\item Programmation vectorielle en R
+%\item Traitement de données en R
+%\begin{itemize}
+%\item L’agrégation: LA notion la plus fondamentale
+%\item Les structures de données: tableaux contingents vs. bases de données
+%\end{itemize}
+%\item Bonnes pratiques de programmation
+%\begin{itemize}
+%\item Factoriser son code: utilisation des fonctions
+%\item Limite de longueur d'un code: 80 caractères
+%\end{itemize}
+%\end{itemize}
+%
+%\subsection*{Éléments que je peux aborder à la demande}
+%
+%\begin{itemize}
+%\item optimisation du code par la précompilation en bytecode, le C++ ou la parallélisation des calculs.
+%\item une structures de données puissantes : les \texttt{data.table} 
+%\item notions de programmation fonctionnelle
+%\item autre si vous avez une demande particulière
+%\end{itemize}
+%
+%\subsection*{Les notions que je ne traiterai pas}
+%
+%\begin{itemize}
+%\item la création de package (beaucoup beaucoup trop long)
+%\item la programmation orientée objet dans R (trop complexe)
+%\item les \textit{non-standard evaluations} (trop complexe)
+%\end{itemize}
+  
+\end{document}
