@@ -15,18 +15,18 @@ nombre %<>% separate(annee, c("x", "y", "z", "t", "annee"), " ") %>% select(-x,-
 
 financement = full_join(prets, nombre)
 
-financement_relatif = financement %>% 
-  group_by(annee) %>% 
+financement_relatif = financement %>%
+  group_by(annee) %>%
   summarise(montant = sum(montant),
-            nombre  = sum(nombre)) %>% 
+            nombre  = sum(nombre)) %>%
   mutate(relatif = montant/nombre)
 
 financement_relatif %$% plot(as.factor(annee), relatif)
 
-financement_par_activite = financement %>%  
-  group_by(`Production principale`) %>%  
+financement_par_activite = financement %>%
+  group_by(`Production principale`) %>%
   summarise(montant = sum(montant),
-            nombre  = sum(nombre)) %>% 
+            nombre  = sum(nombre)) %>%
   mutate(relatif = montant/nombre)
 
 financement_par_activite %$% plot(as.factor(`Production principale`), montant)
