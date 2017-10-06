@@ -1,3 +1,4 @@
+rm(list=ls())
 library(Rcpp)
 library(microbenchmark)
 
@@ -106,7 +107,7 @@ fR = function(x)
 n = 1e6
 t = runif(n, 0, 10)
 
-microbenchmark(fR(t), f(t), times = 20)
+microbenchmark(fR(t), f(t), times = 10)
 
 
 # ======= Version vectorisée 2 ======= 
@@ -167,4 +168,4 @@ microbenchmark(fR(t), fC(t), diff(t), times = 50)
 # - Si un package est lent c'est surement qu'il est mal codé.
 
 # - Les packages du tidyverse permettent de faire de la programmation vectorielle
-# - Les packages du tidyverse sont codés en C++. 
+# - Les packages du tidyverse sont codés en C++.

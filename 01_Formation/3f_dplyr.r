@@ -4,6 +4,7 @@
 # =                                                                            =
 # ==============================================================================
 
+rm(list=ls())
 library(dplyr)
 library(readr)
 
@@ -30,6 +31,8 @@ data %>% mutate(V = Diametre^2/4*Hauteur/3)
 # summarise
 # =========
 
+# Error in summarise_impl(.data, dots) :
+#   Evaluation error: object 'V' not found.
 data %>% summarise(Vtot = sum(V))
 
 data %>% filter(Temps == 1) %>% summarise(Vtot = sum(V))
@@ -47,7 +50,8 @@ datag = data %>% group_by(Temps)
 # ====================
 
 # 95% des problèmes
-
+# Error in summarise_impl(.data, dots) :
+#     Evaluation error: object 'V' not found.
 data %>% group_by(Temps) %>% summarise(Vtot = sum(V))
 
 data %>% group_by(Temps, Zone) %>% summarise(Vtot = sum(V))
@@ -75,11 +79,11 @@ Nomenclature = data.frame(Espece = c("Peuplier", "Bouleau", "Erable", "Chene", "
 
 data %<>% left_join(Nomenclature, by = c("Espece" = "code"))
 
+# Error: Data source must be a dictionary
 data %<>% rename(Essence = Espece.y) %>% select(-Espece)
 
 # ===================
 # case_when vs ifelse
 # =================== 
 
-
-
+# Error: todo?

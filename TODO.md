@@ -1,7 +1,8 @@
 # Choses à faire
 
-- Remplacer les `setwd()`
-- Ajouter des commentaires dans les solutions
+- Trouver toutes les erreurs (# Error ...) et corriger
+- Remplacer les `setwd()` si possible (pê pas)
+- Ajouter des commentaires dans les solutions (Eric)
 
 # Installation
 - RStudio
@@ -9,6 +10,7 @@
   - Rcpp?
   - microbenchmark?
   - tidyverse (Linux: devtools + `devtools::install_github("hadley/tidyverse")`)
-  - dplyr
-  - readr
-  - magrittr
+    - dplyr
+    - readr
+    - magrittr
+    - ... (lister tous ceux utilisés)

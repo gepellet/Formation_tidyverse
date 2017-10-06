@@ -1,3 +1,4 @@
+rm(list=ls())
 library(readr)
 
 setwd("/home/jr/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnees")

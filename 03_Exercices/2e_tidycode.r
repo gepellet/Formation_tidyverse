@@ -1,3 +1,5 @@
+rm(list=ls())
+
 # **********
 # Exercice 1
 # **********
@@ -22,3 +24,5 @@ data$nmetric2 = data$metric2 * (data$distance * cos(data$angle*pi/180)) / 10 / d
 data$nmetric3 = data$metric3 * (data$distance * cos(data$angle*pi/180)) / 10 / data$intensity
 
 # Réécrivez un code lisible comme un roman.
+
+# Error: pas de solution encore
