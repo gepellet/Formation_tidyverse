@@ -33,4 +33,3 @@ variations  = group_by(deversement, Nom, Element) %>% summarise(deltaC = diff(Co
 # Donc 'group_by + summarise'
 
 var_moyenne = group_by(variations, Element) %>% summarise(delta_moy = mean(deltaC))
-
