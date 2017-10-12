@@ -77,7 +77,7 @@ data %$% plot(Hauteur, Diametre, col = Parcelle, cex = Qualite)
 # Et oui, un bon code peut être lu (presque) comme un livre.
 
 # Comparez ce code
-# Ne pas faire rouler, il donnera une erreur car la variable test4 n'existe pas.
+# Ne pas faire rouler ce code. Il donnera une erreur car la variable test4 n'existe pas.
 for(i in unique(test4$num_UC))
 { 
   for (j in 1:max(test4[test4$num_UC==i,]$num_branch_azi,na.rm=T))

@@ -35,7 +35,7 @@ data2 = gather(data, gene, survie, GPQW1:PpH42b)
 # Autre syntaxe
 data2 = gather(data, gene, survie, -experience)
 
-# Aggr.gation (R base)
+# Aggrégation (R base)
 moy = aggregate(survie~gene, data2, mean)
 et  = aggregate(survie~gene, data2, sd)
 
