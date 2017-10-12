@@ -17,7 +17,7 @@ et sélectionnez le fichier d'installation (section `Installers`) pour votre
 ordinateur. Une fois le fichier d'installation téléchargé, lancez-le et suivez
 les étapes d'installation.
 
-### Librarie `tidyverse`
+### Librarie tidyverse
 
 Pour installer la librarie `tidyverse` dans RStudio, cliquez sur l'onglet
 `Packages` dans le panneau en bas à droite puis sur le sous-onglet `Install` à
