@@ -7,7 +7,7 @@ autosize: true
 Pourquoi apprendre à utiliser les package du tidyverse ? 
 ========================================================
 
-### Pour ne pas voir ca
+### Pour ne pas voir ça
 
 ```r
 for(i in unique(test4$num_UC))
@@ -31,7 +31,7 @@ for(i in unique(test4$num_UC))
 Pourquoi apprendre à utiliser les package du tidyverse ? 
 ========================================================
 
-### Mais pour voir ca
+### Mais pour voir ça
 
 ```r
 calcul_angles = function(azimuts)

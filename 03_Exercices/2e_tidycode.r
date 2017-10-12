@@ -1,8 +1,8 @@
-rm(list=ls())
+# **********
+# Exercice 2
+# **********
 
-# **********
-# Exercice 1
-# **********
+rm(list=ls())
 
 data = data.frame(experience = 1:10,
                   angle      = runif(10, 0, 90),

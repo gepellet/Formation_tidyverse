@@ -1,7 +1,8 @@
+# **********
+# Exercice 2
+# **********
+
 rm(list=ls())
-# **********
-# Exercice 1
-# **********
 
 data = data.frame(experience = 1:10,
                   angle      = runif(10, 0, 90),
@@ -15,12 +16,19 @@ data = data.frame(experience = 1:10,
 library(magrittr)
 
 # Je crée une fonction deg2rad pour convertir de degrés vers radian. Dans le code, lire
-# deg2rad sera plus facilement compréhensible que *pi/180. Ici on peut dire que *pi/180 est 
+# deg2rad sera plus facilement compréhensible que *pi/180. Ici on peut dire que *pi/180 est
 # évident mais dans le cas général c'est toujours mieux de créer une fonction lisible.
 
-deg2rad = function(x) 
-{ 
-  return(x*pi/180) 
+deg2rad = function(x)
+{
+  return(x*pi/180)
+}
+
+# On peut être même plus explicite dans les noms de fonctions afin que le code
+# soit plus facile à lire.
+degrees_to_radians = function(x)
+{
+  return(x*pi/180)
 }
 
 # Finalement normaliser la mesure c'est simplement multiplier par un facteur de correction
@@ -28,16 +36,16 @@ deg2rad = function(x)
 
 correction = function(angle, dist, intensity, dist_ref)
 {
-  angle = deg2rad(angle)
+  angle = degrees_to_radians(angle)
   factor = dist * cos(angle) / dist_ref / intensity
   return(factor)
 }
 
-# Finalement je crée une fonction normalize pour normaliser mes données 
+# Finalement je crée une fonction normalize pour normaliser mes données
 
 normalize = function(data, field, distance_ref)
 {
-  x = data[, field] 
+  x = data[, field]
   factor = data %$% correction(angle, distance, intensity, distance_ref)
   return (x*factor)
 }

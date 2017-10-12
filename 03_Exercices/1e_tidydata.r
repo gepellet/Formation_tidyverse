@@ -1,11 +1,11 @@
+# ***********
+# Exercice 1a
+# ***********
+
 rm(list=ls())
 library(tidyr)
 library(magrittr)
 library(readr)
-
-# **********
-# Exercice 1
-# **********
 
 # On donne a 3 personnes 2 médicamments 'a' et 'b' et on mesure leur fréquence cardiaque
 # - Les données sont-elles correctement représentées
@@ -18,9 +18,9 @@ data <- data.frame(
   b = c(56, 90, 50)
 )
 
-# **********
-# Exercice 2
-# **********
+# ***********
+# Exercice 1b
+# ***********
 
 # Les données contiennent pour chaque espèce d'arbre une information (supposée) binaire
 # d'absence ou de présence de régénération végétale pour 10 parcelles d'échantillonnage.
@@ -32,9 +32,9 @@ setwd("/home/jr/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnee
 
 regeneration = read_csv("regeneration.csv")
 
-# **********
-# Exercice 3
-# **********
+# ***********
+# Exercice 1c
+# ***********
 
 # On a, pour 7 personnes, le poids, age, taille, sexe ainsi que le groupe sanguin
 # - Les données sont-elles correctement représentées

@@ -1,13 +1,13 @@
-rm(list=ls())
-library(magrittr)
-
-setwd("~/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnees/")
-
 # ==============================================================================
 # =                                                                            =
 # =                   THEME 2 : MAGRITTR ET FONCTION                           =
 # =                                                                            =
 # ==============================================================================
+
+rm(list=ls())
+library(magrittr)
+
+setwd("~/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnees/")
 
 # ==================================
 # =   Opérateur de piping simple   =
@@ -73,11 +73,11 @@ data %$% plot(Hauteur, Diametre, col = Parcelle, cex = Qualite)
 # ==================================
 
 # Ecrivez votre code comme si il devait être lu comme du francais (de l'anglais plutôt).
-# Ecrivez votre code comme pour être lu par un autre que vous
+# Ecrivez votre code comme pour être lu par un autre que vous.
 # Et oui, un bon code peut être lu (presque) comme un livre.
 
-# Comparez ce code 
-# Error in unique(test4$num_UC) : object 'test4' not found
+# Comparez ce code
+# Ne pas faire rouler, il donnera une erreur car la variable test4 n'existe pas.
 for(i in unique(test4$num_UC))
 { 
   for (j in 1:max(test4[test4$num_UC==i,]$num_branch_azi,na.rm=T))
@@ -92,7 +92,6 @@ for(i in unique(test4$num_UC))
 }
 
 # Et ce code 
-
 calcul_angles = function(azimuts)
 {
   n = length(azimuts)
@@ -106,7 +105,7 @@ test4 %>% group_by(num_UC) %>% mutate(angles = calcul_angles(Azimut))
 # Quelle difference principale ? (Hormis l'utilisation de dplyr que nous verrons tantôt)
 
 
-# Créez des fonctions pour:
+# Créer des fonctions pour:
 # - ne pas se répéter
 # - simplifier la lecture du code
 # - debugger plus facilement

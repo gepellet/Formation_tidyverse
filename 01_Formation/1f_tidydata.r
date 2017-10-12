@@ -1,11 +1,11 @@
-rm(list=ls())
-library(tidyr)
-
 # ==============================================================================
 # =                                                                            =
 # =       THEME 1 : TABLEAUX CONTINGENT BASE DE DONNEE ET TIDYDATA             =
 # =                                                                            =
 # ==============================================================================
+
+rm(list=ls())
+library(tidyr)
 
 # ====================================================================
 # - Qu'est qu'un tableau contingent (ou tableau large)
@@ -35,7 +35,7 @@ data2 = gather(data, gene, survie, GPQW1:PpH42b)
 # Autre syntaxe
 data2 = gather(data, gene, survie, -experience)
 
-# Aggregation (R base)
+# Aggr.gation (R base)
 moy = aggregate(survie~gene, data2, mean)
 et  = aggregate(survie~gene, data2, sd)
 
