@@ -8,10 +8,10 @@ Vous devrez apporter votre ordinateur portable avec [RStudio](https://www.rstudi
 install.packages(c("tidyverse", "magrittr"))
 ```
 
-En plus de ces deux packages indispensables vous pouvez installer `Rcpp` et `microbenchmarck` qui sont facultatifs et servent uniquement à illustrer certain concepts mais ne sont pas utiles a proprement parler dans cette formation.
+En plus de ces deux packages indispensables vous pouvez installer `Rcpp` et `microbenchmarck` qui sont facultatifs et servent uniquement à illustrer certain concepts mais ne sont pas utiles à proprement parler dans cette formation.
 
 ```r
 install.packages(c("Rcpp", "microbenchmark"))
 ```
 
-Vous pouvez venir avec des données personelles à traiter. En fonction du temps restant à *la fin de la formation* nous pourrons discuter de la meilleure façon de traiter vos données et résoudre vos problèmes.
+Vous pouvez venir avec des données personelles à traiter. En fonction du temps restant, *à la fin de la formation* nous pourrons discuter de la meilleure façon de traiter vos données et résoudre vos problèmes.
