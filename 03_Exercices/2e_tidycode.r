@@ -14,7 +14,7 @@ data = data.frame(experience = 1:10,
 
 
 
-# Pour chaque metrique il faut normaliser la valeur en fonction de l'intensité émise
+# Pour chaque métrique, il faut normaliser la valeur en fonction de l'intensité émise,
 # de l'angle d'incidence et de la distance
 
 # x' = x *  ( (distance * cos(angle)) / distance_ref)  / intensity

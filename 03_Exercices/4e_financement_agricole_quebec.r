@@ -1,10 +1,10 @@
-# **********
-# Exercice 4
-# **********
-
 rm(list=ls())
 
 library(readr)
+
+# **********
+# Exercice 4
+# **********
 
 setwd("/home/jr/Documents/Thèse/Cours/Formations/Formation R - tidyverse/02_Donnees")
 

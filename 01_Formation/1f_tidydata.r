@@ -9,7 +9,7 @@ rm(list=ls())
 library(tidyr)
 
 # ====================================================================
-# - Qu'est qu'un tableau contingent (ou tableau large)
+# - Qu'est ce qu'un tableau contingent (ou tableau large) ?
 # - Conversion en tableau large en tableau long type "base de données"
 # ====================================================================
 

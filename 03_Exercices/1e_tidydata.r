@@ -13,11 +13,9 @@ library(readr)
 # - Si oui faites un t-test pour test l'effet de 'a' par rapport à 'b'
 # - Si non faites quand même un t-test pour test l'effet de 'a' par rapport à 'b'
 
-data <- data.frame(
-  name = c("Wilbur", "Petunia", "Gregory", "Marc"),
-  a = c(67, 80, 64, 67),
-  b = c(56, 90, 50, 55)
-)
+data <- data.frame(name = c("Wilbur", "Petunia", "Gregory", "Marc"),
+                   a = c(67, 80, 64, 67),
+                   b = c(56, 90, 50, 55))
 
 # ***********
 # Exercice 1b

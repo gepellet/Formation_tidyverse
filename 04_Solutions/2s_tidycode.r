@@ -3,6 +3,7 @@
 # **********
 
 rm(list=ls())
+library(magrittr)
 
 data = data.frame(experience = 1:10,
                   angle      = runif(10, 0, 90),
@@ -12,8 +13,6 @@ data = data.frame(experience = 1:10,
                   metric2    = rnorm(10, 5, 0.3),
                   metric3    = rnorm(10, 5, 0.1))
 
-
-library(magrittr)
 
 # Je crée une fonction deg2rad pour convertir de degrés vers radian. Dans le code, lire
 # deg2rad sera plus facilement compréhensible que *pi/180. Ici on peut dire que *pi/180 est
