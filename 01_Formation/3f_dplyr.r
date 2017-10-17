@@ -27,13 +27,17 @@ data %>% filter(Zone == "Quebec", Temps == 5)
 # mutate
 # =========
 
-data %<>% mutate(V = Diametre^2/4*Hauteur/3)
+data %>% mutate(V = Diametre^2/4*Hauteur/3)
+
+data %<>% mutate(A = Diametre^2/4, V = A*Hauteur/3)
 
 # =========
 # summarise
 # =========
 
 data %>% summarise(Vtot = sum(V))
+
+data %>% summarise(Vtot = sum(V), Hsd = sd(Diametre))
 
 data %>% filter(Temps == 1) %>% summarise(Vtot = sum(V))
 data %>% filter(Temps == 3) %>% summarise(Vtot = sum(V))
@@ -43,7 +47,7 @@ data %>% filter(Temps == 5) %>% summarise(Vtot = sum(V))
 # group_by
 # =========
 
-datag = data %>% group_by(Temps)
+data %>% group_by(Temps)
 
 # ====================
 # group_by + summarise
@@ -51,7 +55,7 @@ datag = data %>% group_by(Temps)
 
 # 95% des problèmes
 
-data %>% group_by(Temps) %>% summarise(Vtot = sum(V))
+data %>% group_by(Temps) %>% summarise(Vtot = sum(V), Atot = sum(A))
 
 data %>% group_by(Temps, Zone) %>% summarise(Vtot = sum(V))
 
@@ -61,7 +65,7 @@ data %>% group_by(Temps, Zone) %>% summarise(Vtot = sum(V))
 
 # 4.9% des problèmes restants
 
-diff = function(x)
+diff2 = function(x)
 {
   n = length(x)
   d = x[2:n] - x[1:(n-1)]
@@ -79,9 +83,3 @@ Nomenclature = data.frame(Espece = c("Peuplier", "Bouleau", "Erable", "Chene", "
 data %<>% left_join(Nomenclature, by = c("Espece" = "code"))
 
 data %<>% rename(Essence = Espece.y) %>% select(-Espece)
-
-# ===================
-# case_when vs ifelse
-# =================== 
-
-# Error: todo?

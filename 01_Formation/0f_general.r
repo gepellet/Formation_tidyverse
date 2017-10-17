@@ -1,5 +1,5 @@
 rm(list=ls())
-library(Rcpp)
+
 library(microbenchmark)
 
 # ==============================================================================
@@ -13,16 +13,13 @@ library(microbenchmark)
 # ************************************
 
 # ======================================
-# Notions theoriques de base : 
+# Notions theoriques: 
 #   - l'OS
 #   - la RAM
 #   - language haut/bas niveau
 #   - notion de typage
 #   - allocation dynamique de mémoire
 #	  - transtypage dynamique inféré
-# 	- recyclage de ménoire 
-#   - recyclage automatique de mémoire (garbage collection)
-#   - fuite de mémoire
 #   - temps nécessaire à l'interprétation
 # ======================================
 
@@ -107,26 +104,11 @@ fR = function(x)
 n = 1e6
 t = runif(n, 0, 10)
 
-microbenchmark(fR(t), f(t), times = 10)
-
-
-# ======= Version vectorisée 2 ======= 
-
-fR2 = function(x)
-{
-  return(x - dplyr::lag(x))
-}
-
-# ------ comparaison de fR et f ------
-# n = 1e5 (x130), n = 1e6 (x100), n = 1e7 (x50) (long)
-
-n = 1e6
-t = runif(n, 0, 10)
-
-microbenchmark(fR2(t), fR(t), times = 20)
-
+microbenchmark(fR(t), f(t), times = 20)
 
 # ======= Version en C++ ======= 
+
+library(Rcpp)
 
 cppFunction('
 NumericVector fC(NumericVector x)
@@ -147,15 +129,14 @@ return output;
 n = 1e7
 t = runif(n, 0, 10)
 
-microbenchmark(fC(t), fR2(t), times = 10)
+microbenchmark(fC(t), fR(t), times = 10)
 
 # Comparaison totale 
 
-n = 2e4
+n = 1e4
 t = runif(n, 0, 10)
-microbenchmark(f0(t), f(t), fR2(t), fC(t), times = 3)
+microbenchmark(f0(t), f(t), fR(t), diff(t), fC(t), times = 5)
 
-microbenchmark(fR(t), fC(t), diff(t), times = 50)
 
 # ************************************
 #       PARTIE 3 : CONCUSIONS

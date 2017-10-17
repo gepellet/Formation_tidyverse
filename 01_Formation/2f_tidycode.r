@@ -1,7 +1,8 @@
 rm(list=ls())
+
 library(magrittr)
 
-setwd("~/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnees/")
+setwd("~/Documents/Thèse/Cours/Formations/Formation R - tidyverse/02_Donnees/")
 
 # ==============================================================================
 # =                                                                            =
@@ -77,7 +78,7 @@ data %$% plot(Hauteur, Diametre, col = Parcelle, cex = Qualite)
 # Et oui, un bon code peut être lu (presque) comme un livre.
 
 # Comparez ce code 
-# Error in unique(test4$num_UC) : object 'test4' not found
+
 for(i in unique(test4$num_UC))
 { 
   for (j in 1:max(test4[test4$num_UC==i,]$num_branch_azi,na.rm=T))

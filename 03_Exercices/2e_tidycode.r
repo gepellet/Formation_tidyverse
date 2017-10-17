@@ -17,12 +17,10 @@ data = data.frame(experience = 1:10,
 # Pour chaque metrique il faut normaliser la valeur en fonction de l'intensité émise
 # de l'angle d'incidence et de la distance
 
-# x = x *  ( (distance * cos(angle)) / distance_ref)  / intensity
+# x' = x *  ( (distance * cos(angle)) / distance_ref)  / intensity
 
 data$nmetric1 = data$metric1 * (data$distance * cos(data$angle*pi/180)) / 10 / data$intensity
 data$nmetric2 = data$metric2 * (data$distance * cos(data$angle*pi/180)) / 10 / data$intensity
 data$nmetric3 = data$metric3 * (data$distance * cos(data$angle*pi/180)) / 10 / data$intensity
 
 # Réécrivez un code lisible comme un roman.
-
-# Error: pas de solution encore

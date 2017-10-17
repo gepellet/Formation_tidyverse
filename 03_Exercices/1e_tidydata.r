@@ -1,4 +1,5 @@
 rm(list=ls())
+
 library(tidyr)
 library(magrittr)
 library(readr)
@@ -7,15 +8,15 @@ library(readr)
 # Exercice 1
 # **********
 
-# On donne a 3 personnes 2 médicamments 'a' et 'b' et on mesure leur fréquence cardiaque
+# On donne a 4 personnes 2 médicamments 'a' et 'b' et on mesure leur fréquence cardiaque
 # - Les données sont-elles correctement représentées
 # - Si oui faites un t-test pour test l'effet de 'a' par rapport à 'b'
 # - Si non faites quand même un t-test pour test l'effet de 'a' par rapport à 'b'
 
 data <- data.frame(
-  name = c("Wilbur", "Petunia", "Gregory"),
-  a = c(67, 80, 64),
-  b = c(56, 90, 50)
+  name = c("Wilbur", "Petunia", "Gregory", "Marc"),
+  a = c(67, 80, 64, 67),
+  b = c(56, 90, 50, 55)
 )
 
 # **********
@@ -24,11 +25,11 @@ data <- data.frame(
 
 # Les données contiennent pour chaque espèce d'arbre une information (supposée) binaire
 # d'absence ou de présence de régénération végétale pour 10 parcelles d'échantillonnage.
-# - Pourquoi les données sont mal représentées
+# - Pourquoi les données sont-elles mal représentées ?
 # - Transformez ce tableau en tidydata
 # - Remplacez les données non binaire en donnée binaire
 
-setwd("/home/jr/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnees")
+setwd("/home/jr/Documents/Thèse/Cours/Formations/Formation R - tidyverse/02_Donnees/")
 
 regeneration = read_csv("regeneration.csv")
 
@@ -37,7 +38,7 @@ regeneration = read_csv("regeneration.csv")
 # **********
 
 # On a, pour 7 personnes, le poids, age, taille, sexe ainsi que le groupe sanguin
-# - Les données sont-elles correctement représentées
+# - Les données sont-elles correctement représentées ?
 # - Si oui faites un modèle lineraire poids vs taille + groupe sanguin
 # - Si non faites quand même un modèle lineraire poids vs taille + groupe sanguin
 
