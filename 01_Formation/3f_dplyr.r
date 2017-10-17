@@ -73,9 +73,6 @@ diff = function(x)
   c(0, d)
 }
 
-# Error:
-# Error in mutate_impl(.data, dots) :
-#   Column `Accroissement_H` must be length 5 (the group size) or one, not 4
 data %<>% group_by(Zone, Espece) %>% mutate(Accroissement_H = diff(Hauteur), Accroissement_D = diff(Diametre))
 
 # =========
