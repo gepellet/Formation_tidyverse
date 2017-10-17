@@ -66,7 +66,7 @@ data %>% group_by(Temps, Zone) %>% summarise(Vtot = sum(V))
 
 # 4.9% des problèmes restants
 
-diff2 = function(x)
+diff = function(x)
 {
   n = length(x)
   d = x[2:n] - x[1:(n-1)]

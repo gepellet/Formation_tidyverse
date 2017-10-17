@@ -2,7 +2,7 @@
 
 Ce repository GitHub contient le matériel de la formation R tidyverse (tidyr, dplyr, magrittr) donnée le 24 octobre 2017 au local 1210 du Pavillon Charles-Eugène Marchand sur le campus de l'Université Laval.
 
-Vous devrez apporter votre ordinateur portable avec [RStudio](https://www.rstudio.com/products/rstudio/download/#download) et les packages `tidyverse`et `magrittr` installés.
+Vous devrez apporter votre ordinateur portable avec [RStudio](https://www.rstudio.com/products/rstudio/download/#download) et les packages `tidyverse`et `magrittr` installés. Ayez une version à jour de R. À date la dernière version de R est 3.4.2.
 
 ```r
 install.packages(c("tidyverse", "magrittr"))
