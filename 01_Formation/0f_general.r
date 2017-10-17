@@ -1,18 +1,19 @@
-rm(list=ls())
-
-library(microbenchmark)
-
 # ==============================================================================
 # =                                                                            =
 # =                 THEME 1 : R EST UN LANGUAGE VECTORIEL                      =
 # =                                                                            =
 # ==============================================================================
 
+rm(list=ls())
+
+library(microbenchmark)
+
 # ************************************
 #   PARTIE 1 : THEORIE INFORMATIQUE
 # ************************************
 
 # ======================================
+
 # Notions theoriques: 
 #   - l'OS
 #   - la RAM
@@ -29,7 +30,7 @@ a = 1
 a = 1.5
 tab = c(4,5,6)    # Création d'un tableau de 3 entiers
 tab = c(tab, 7)   # Ajout d'un entier au tableau
-tab[2] = 4.5	    # Ajout d'un flottant au tableau
+tab[2] = 4.5	  # Ajout d'un nombre décimal (float) au tableau
 tab[9]
 
 # ************************************
@@ -53,35 +54,35 @@ diff(c(1,2,4,4,3))
 # Comment beaucoup de gens l'écrivent
 
 # c'est la pire façon possible et imaginable de faire.
-# Chaque fois qu'une personne écrit ce type de code en R un 
+# Chaque fois qu'une personne écrit ce type de code en R un
 # chaton tout mimi se suicide sous un tracteur. Pensez-y !
 
 f0 = function(x)
 {
   output = c()
-  
+
   for(i in 2:length(x))
   {
     difference = x[i] - x[i-1]
     output = c(output, difference)
   }
-  
+
   return(output)
 }
 
 # ====== Version de base =======
 
-# l'output est déjà remplit avec des 0. Lorsqu'on fait le calcul, la case existe 
-# déjà en mémoire. On ne fait que changer les valeurs 0 par le calcul au lieu d'ajouter 
+# l'output est déjà remplit avec des 0. Lorsqu'on fait le calcul, la case existe
+# déjà en mémoire. On ne fait que changer les valeurs 0 par le calcul au lieu d'ajouter
 # des cases. Il n'y a pas de nouvelle allocation de mémoire.
 
 f = function(x)
 {
   output = numeric(length(x))
-  
+
   for(i in 2:length(x))
     output[i] = x[i] - x[i-1]
-  
+
   return(output)
 }
 
@@ -94,7 +95,7 @@ t = runif(n, 0, 10)
 
 microbenchmark(f(t), f0(t), times = 5)
 
-# ======= Version vectorisée 1 ======= 
+# ======= Version vectorisée 1 =======
 
 fR = function(x)
 {
@@ -106,21 +107,21 @@ t = runif(n, 0, 10)
 
 microbenchmark(fR(t), f(t), times = 20)
 
-# ======= Version en C++ ======= 
+# ======= Version en C++ =======
 
 library(Rcpp)
 
 cppFunction('
 NumericVector fC(NumericVector x)
 {
-int n = x.size();
-NumericVector output(n);
-output[0] = 0;
-            
-for(int i = 1 ; i < n ; ++i) 
-output[i] = x[i] - x[i-1];
-            
-return output;
+  int n = x.size();
+  NumericVector output(n);
+  output[0] = 0;
+  
+  for(int i = 1 ; i < n ; ++i)
+    output[i] = x[i] - x[i-1];
+  
+  return output;
 }')
 			
 # ----- comparaison de fC et fR2  -----
@@ -131,7 +132,7 @@ t = runif(n, 0, 10)
 
 microbenchmark(fC(t), fR(t), times = 10)
 
-# Comparaison totale 
+# Comparaison totale
 
 n = 1e4
 t = runif(n, 0, 10)
@@ -142,11 +143,11 @@ microbenchmark(f0(t), f(t), fR(t), diff(t), fC(t), times = 5)
 #       PARTIE 3 : CONCUSIONS
 # ************************************
 
-# - R est un language vectoriel. 
-# - Si vous écrivez des boucles c'est qu'il vous manque des notions de R
-# - R n'est pas lent (si mais moins qu'on le croit)
+# - R est un language vectoriel.
+# - Si vous écrivez des boucles, il vous manque des notions pour mieux utiliser R.
+# - R n'est pas lent (si mais moins qu'on le croit).
 # - Seul les mauvais codes sont lent.
 # - Si un package est lent c'est surement qu'il est mal codé.
 
-# - Les packages du tidyverse permettent de faire de la programmation vectorielle
+# - Les packages du tidyverse permettent de faire de la programmation vectorielle.
 # - Les packages du tidyverse sont codés en C++.

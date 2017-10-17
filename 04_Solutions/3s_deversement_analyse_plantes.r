@@ -3,7 +3,6 @@
 # **********
 
 rm(list=ls())
-
 library(dplyr)
 library(tidyr)
 library(readr)
@@ -18,14 +17,14 @@ deversement2016 = read_csv("deversement_analyse_plantes_2016.csv")
 # Une unité de mesure est une parcelle à une date donnée pour un élément donné. Une mesure est
 # une concentration.
 
-# Ici on merge les deux tableaux puis on le reformate immediatement après. C'est plus simple
+# Ici on merge les deux tableaux puis on le reformate immédiatement après. C'est plus simple
 # que de reformater deux fois puis merger.
 
 deversement = bind_rows(deversement2015, deversement2016) %>% gather(Element, Concentration, `Al (mg/L)`:`Zn (mg/L)`)
 
 # Nous avons maintenant de belles données
 
-# Nous voulons faire un traitement par groupe car on veux faire quelaue chose **pour chaque** 
+# Nous voulons faire un traitement par groupe car on veux faire quelaue chose **pour chaque**
 # parcelle et pour chaque element. C'est une aggregation donc 'group_by'
 
 # Que veut on faire pour chaque groupe? Calculer une unique valeur qui resume le jeu de donnée
@@ -38,4 +37,3 @@ variations  = group_by(deversement, Nom, Element) %>% summarise(deltaC = diff(Co
 # Donc 'group_by + summarise'
 
 var_moyenne = group_by(variations, Element) %>% summarise(delta_moy = mean(deltaC))
-

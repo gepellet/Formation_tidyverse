@@ -1,7 +1,7 @@
 rm(list=ls())
 
 # **********
-# Exercice 1
+# Exercice 2
 # **********
 
 data = data.frame(experience = 1:10,

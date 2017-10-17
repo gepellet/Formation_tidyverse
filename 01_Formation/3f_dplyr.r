@@ -11,6 +11,7 @@ library(readr)
 library(magrittr)
 
 setwd("~/Documents/Thèse/Cours/Formations/Formation R - tidyverse/02_Donnees/")
+
 data = read_csv("mesure_arbre.csv")
 
 # Est-ce que le jeu de données est bien présenté?

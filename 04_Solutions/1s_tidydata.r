@@ -1,11 +1,11 @@
+# ***********
+# Exercice 1a
+# ***********
+
 rm(list=ls())
 library(tidyr)
 library(magrittr)
 library(readr)
-
-# ************
-# Exercice 1
-# ************
 
 data <- data.frame(
   name = c("Wilbur", "Petunia", "Gregory"),
@@ -13,7 +13,7 @@ data <- data.frame(
   b = c(56, 90, 50)
 )
 
-# Les données ne sont pas 'tidy' et donc très diffilenent utilisables.
+# Les données ne sont pas 'tidy' et donc très difficilement utilisables.
 
 # La plus petite unité de mesure est une personne prennant un médicament donné et la mesure
 # est une fréquence cardiaque.
@@ -29,18 +29,18 @@ tidy$drug %<>% as.factor
 
 t.test(heartrate~drug, data = tidy)
 
-# ************
-# Exercice 2
-# ************
+# ***********
+# Exercice 1b
+# ***********
 
 setwd("/home/jr/Documents/Thèse/Cours/Formations/Formation R - tidyverse/Donnees")
 
-# Les données ne sont pas 'tidy' et donc très diffilenent utilisables.
+# Les données ne sont pas 'tidy' et donc très difficilement utilisables.
 
-# La plus petite unité de mesure est une classe de hauteur pour une essence dans une parcelle 
+# La plus petite unité de mesure est une classe de hauteur pour une essence dans une parcelle
 # et la mesure est la présence ou absence de cette unité.
 
-# Une ligne doit donc contenir une classe de hauteur pour une essence pour une parcelle + une 
+# Une ligne doit donc contenir une classe de hauteur pour une essence pour une parcelle + une
 # mesure de présence.
 
 # On peut reformater avec 'gather'
@@ -53,9 +53,9 @@ regeneration = read_csv("regeneration.csv") %>% gather(placette, presence, `1`:`
 
 regeneration$presence[regeneration$presence > 0] = 1
 
-# ************
-# Exercice 3
-# ************
+# ***********
+# Exercice 1c
+# ***********
 
 data <- data.frame(name   = c("Wilbur", "Petunia", "Gregory", "John", "George", "Jean-Romain", "Claude"),
                    age    = c(56, 85, 12, 18, 25, 28, 26),
